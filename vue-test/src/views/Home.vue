@@ -17,19 +17,19 @@
 </template>
 
 <script lang="ts">
-// import { Component, Vue } from 'vue-property-decorator';
-// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-// @Component({
-//   components: {
-//     HelloWorld,
-//   },
-// })
-// export default class Home extends Vue {
-//   created(){
-//     console.log(document.body.clientWidth,document.body.clientTop);
-//   }
-// }
+@Component({
+  components: {
+    HelloWorld,
+  },
+})
+export default class Home extends Vue {
+  created(){
+    console.log(document.body.clientWidth,document.body.clientTop);
+  }
+}
 </script>
 <style lang="scss">
 @media screen and (min-width:375px){

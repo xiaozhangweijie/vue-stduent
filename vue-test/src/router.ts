@@ -26,6 +26,10 @@ export default new Router({
       path:"/regedit",
       name:"regedit",
       component:()=>import("./views/Regedit.vue")
+    },{
+      path:"/attention",
+      name:"attention",
+      component:()=>import("./views/Attention.vue")
     }
   ]
 })
