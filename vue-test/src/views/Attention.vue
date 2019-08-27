@@ -16,7 +16,7 @@
       <button>添加</button>
     </div>
     <div class="paint">
-      <chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>
+      <div id="chart1"></div>
       <div class="btn">
         <div>
           <button>添加成绩+</button>
@@ -26,7 +26,8 @@
       </div>
     </div>
     <div class="paint1">
-      <chart ref="chart2" :options="histogram" :auto-resize="true"></chart>
+      <div id="chart2"></div>
+      <!-- <chart ref="chart2" :options="histogram" :auto-resize="true"></chart> -->
       <div class="btn">
         <div>
           <button>添加成绩+</button>
@@ -87,7 +88,11 @@ export default {
     };
   },
   mounted() {
-    this.orgOptions = {
+   let a=document.getElementById("chart1");
+   let b=document.getElementById("chart2");
+     var charts=echarts.init(a);
+     var charts2=echarts.init(b);
+    let orgOptions = {
       title: {
         text: "XX同学的日周考成绩统计图",
         subtext: "仅供参考"
@@ -164,7 +169,7 @@ export default {
         }
       ]
     };
-    this.histogram = {
+    let histogram = {
       title: {
         text: "XX同学的日周考成绩统计图",
         subtext: "仅供参考"
@@ -240,6 +245,8 @@ export default {
         }
       ]
     };
+       charts.setOption(orgOptions);
+       charts2.setOption(histogram);
   }
 };
 </script>
@@ -334,12 +341,226 @@ export default {
         border: 1px solid rgba(163, 208, 253, 1);
       }
     }
-    .paint {
+   .paint {
       width: 90%;
       margin-left: 5%;
+      >#chart1{
+        width:100%;
+        height:300px;
+      }
       > .echarts {
         width: 100%;
       }
+      .btn {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background: #f2f1f1 100%;
+        justify-content: space-between;
+        div {
+          width: 50%;
+          line-height: 50px;
+          button {
+            margin-left: 5%;
+            width: 150px;
+            height: 35px;
+            line-height: 35px;
+            background: #fff;
+            border: none;
+          }
+        }
+        button {
+          line-height: 35px;
+          margin-right: 5%;
+          width: 150px;
+          height: 35px;
+          background: #fff;
+          border: none;
+          margin-top: 0.5%;
+        }
+      }
+    }
+    .paint1 {
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 5%;
+      > #chart2 {
+        width: 100%;
+        height:300px;
+      }
+      .btn {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background: #f2f1f1 100%;
+        justify-content: space-between;
+        div {
+          width: 50%;
+          line-height: 50px;
+          button {
+            margin-left: 5%;
+            width: 150px;
+            height: 35px;
+            line-height: 35px;
+            background: #fff;
+            border: none;
+          }
+        }
+        button {
+          line-height: 35px;
+          margin-right: 5%;
+          width: 150px;
+          height: 35px;
+          background: #fff;
+          border: none;
+          margin-top: 0.5%;
+        }
+      }
+    }
+    .left{
+        margin-top:10%;
+        width:300px;
+        display:flex;
+        flex-direction: column;
+        height:210px;
+        margin-left:10%;
+        line-height: 20px;
+        border-radius: 4px 4px 4px 4px;
+        background-color: rgba(255, 255, 255, 1);
+        text-align: center;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+        >div:nth-child(2){
+            margin-top:5%;
+            button{
+        width: 95px;
+        height: 30px;
+        line-height: 20px;
+        border-radius: 4px 4px 4px 4px;
+        background-color: rgba(230, 241, 252, 1);
+        text-align: center;
+        border: 1px solid rgba(163, 208, 253, 1);
+        border:none;
+            }
+        }
+        >div{
+            margin-top:3%;
+        }
+        >div{
+            input{
+                width:50%;
+                height:30px;
+                line-height:30px;
+            }
+            button{
+                width:50px;
+                height:30px;
+            }
+        }
+        div:nth-child(3){
+            display:flex;
+            justify-content: space-around;
+        }
+         div:nth-child(4){
+            display:flex;
+            justify-content: space-around;
+        }
+          div:nth-child(5){
+              button:nth-child(1){
+            width: 60px;
+            height: 36px;
+            line-height: 20px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 1);
+            text-align: center;
+            border: 1px solid rgba(217, 217, 217, 1);
+              }
+              button:nth-child(2){
+            width: 60px;
+            height: 36px;
+            line-height: 20px;
+            border-radius: 4px;
+            background-color: rgba(24, 144, 255, 1);
+            text-align: center;
+            border:none;
+              }
+              text-align: right;
+        }
+    }
+    .container{
+        width:100%;
+        display:flex;
+        justify-content: space-around;
+    }
+    .right{
+        width: 400px;
+        height: 400px;
+        line-height: 20px;
+        border-radius: 4px 4px 4px 4px;
+        background-color: rgba(255, 255, 255, 1);
+        text-align: center;
+        margin-top:5%;
+        box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.2);
+          >div:nth-child(2){
+            margin-top:5%;
+            input{
+                width:50%;
+                height:30px;
+                line-height:30px;
+            }
+            button{
+        width: 95px;
+        height: 30px;
+        line-height: 20px;
+        border-radius: 4px 4px 4px 4px;
+        background-color: rgba(230, 241, 252, 1);
+        text-align: center;
+        border: 1px solid rgba(163, 208, 253, 1);
+        border:none;
+            }
+        }
+        >div{
+            margin-top:3%;
+        }
+        >div{
+            >textarea{
+                width:50%;
+                height:100px;
+                line-height:30px;
+            }
+            button{
+                width:50px;
+                height:30px;
+            }
+        }
+        div:nth-child(3){
+            display:flex;
+            justify-content: space-around;
+        }
+         div:nth-child(4){
+            display:flex;
+            justify-content: space-around;
+        }
+          div:nth-child(5){
+              button:nth-child(1){
+            width: 60px;
+            height: 36px;
+            line-height: 20px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 1);
+            text-align: center;
+            border: 1px solid rgba(217, 217, 217, 1);
+              }
+              button:nth-child(2){
+            width: 60px;
+            height: 36px;
+            line-height: 20px;
+            border-radius: 4px;
+            background-color: rgba(24, 144, 255, 1);
+            text-align: center;
+            border:none;
+              }
+              text-align: right;
+        }
     }
   }
 }

@@ -6,30 +6,29 @@
     <span>网站工程</span>
     <div class="ins">
       <div>
-       <router-link to="/login">登录</router-link> |
-       <router-link to="/regedit">注册</router-link>
+       <router-link to="/home/login">登录</router-link> |
+       <router-link to="/home/regedit">注册</router-link>
       </div>
-<input type="text" placeholder="牛牛號/">
-<input type="text" placeholder="输入密码">
-<button>登入</button>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Vue from "vue";
+import LetterList from "@/components/LetterList.vue";
+import BrandList from "@/components/BrandList.vue";
 
-@Component({
-  components: {
-    HelloWorld,
-  },
+export default Vue.extend({
+ name:"home",
+ data(){
+   return{
+
+   }
+ },methods:{
+ 
+ }
 })
-export default class Home extends Vue {
-  created(){
-    console.log(document.body.clientWidth,document.body.clientTop);
-  }
-}
 </script>
 <style lang="scss">
 @media screen and (min-width:375px){
@@ -55,17 +54,17 @@ export default class Home extends Vue {
       text-align:center;
     }
     .ins{
- width:100%;
- display:flex;
- flex-wrap: wrap;
- align-items: center;
- justify-content: center;
- >div{
-   width:100%;
-   height:30px;
-   line-height:30px;
-   text-align: center;
- }
+      width:100%;
+      display:flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      >div{
+        width:100%;
+        height:30px;
+        line-height:30px;
+        text-align: center;
+      }
 
  input{
    width:90%;
