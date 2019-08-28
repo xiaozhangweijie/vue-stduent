@@ -2,7 +2,7 @@
   <div class="about">
     <input type="text" placeholder="牛牛號/">
 <input type="text" placeholder="输入密码">
-<button @click="login">登入</button>
+<button @click="login">登录</button>
   </div>
 </template>
 <script>

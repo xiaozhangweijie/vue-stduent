@@ -6,8 +6,8 @@
     <span>网站工程</span>
     <div class="ins">
       <div>
-       <router-link to="/home/login">登录</router-link> |
-       <router-link to="/home/regedit">注册</router-link>
+       <router-link to="/home/login" tag="p">登录</router-link>
+       <router-link to="/home/regedit" tag="p">注册</router-link>
       </div>
       <router-view></router-view>
     </div>
@@ -64,6 +64,10 @@ export default Vue.extend({
         height:30px;
         line-height:30px;
         text-align: center;
+        >p{
+          display:inline-block;
+          padding:5px 5px;
+        }
       }
 
  input{

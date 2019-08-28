@@ -1,8 +1,8 @@
 import request from "../until/request.js";
 export function login(params){
-    return request({
-        url:"/emstu/teacher/login",
-        methods:"POST",
-        data:params
-    })
+    console.log(params);
+    return request.post("/api/teacher/login",params);
+}
+export function register(params){
+    return request.post("/api/teacher/register",params);
 }
