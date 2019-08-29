@@ -40,13 +40,11 @@ export default {
         }else{
           alert("用户名或密码错误");
         }
-        console.log(this.arr);
-      // if(this.arr==1){
-      //   console.log(2223);
-      //  //this.$route.push("/");
-      // }else{
-      //   alert("用户名已存在");
-      // }
+      if(this.arr){
+       this.$router.push("/home/login");
+      }else{
+        alert("用户名已存在");
+      }
       }
     
     },
